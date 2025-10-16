@@ -1,6 +1,13 @@
-git remote add origin https://github.com/SuailArefin/Banking.git
-git branch -M main
-git push -u origin main
+git add .
+git commit -m "update"
+git push origin main
+
+
+
+
+
+
+
 
 
 echo "# Banking" >> README.md
