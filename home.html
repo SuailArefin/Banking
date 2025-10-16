@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banking</title>
+    <title>Welcome</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="./output.css" rel="stylesheet">
@@ -17,20 +17,23 @@
                  <!-- <img  alt="wallpaper" src="https://img.daisyui.com/images/stock/453966.webp" /> -->
 
                  <div class="mockup-phone-display hero bg-base-200 min-h-screen  bg-[url(/img/453966.webp)] ">
-                 <div class="hero-content flex-col lg:flex-row-reverse">
+                 <div class="  lg:flex-row-reverse">
+                        <div class="card-body bg-white my-10 card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <h1 class="text-2xl font-serif text-center">Balance</h1>
+                        <h1 id="balance" class="text-2xl font-serif font-bold text-center" type="number" >34444</h1>
+
+                     </div>
                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                     <div class="card-body">
-                       <fieldset class="fieldset">
-                         <label class="label">Phone Number</label>
-                         <form>
-                         <input id="input-number" type="number" class="input" placeholder="Phone number" />
+
+
+                     <div class="card-body flex">
+                        <form>
+                         <input id="input-amount" type="number" class="input" placeholder="Ammount" />
                          </form>
-                         <label class="label">Pin</label>
-                         <form><input id="input-pass" type="password"  class="input" placeholder="***" autocomplete="off" required/>
-                            </form>
-                         <div><a class="link link-hover">Forgot password?</a></div>
-                         <button id="login" class="btn btn-neutral mt-4">Login</button>
-                       </fieldset>
+                        <button id="add-amount" class="btn btn-neutral">Add Amount</button>
+                        <button class="btn btn-neutral">Withdarw</button>
+                        
+
                      </div>
                    </div>
                  </div>
@@ -45,7 +48,7 @@
 
         
     </section>
-    <script src="/js/login.js">
+    <script src="/js/home.js">
 
 
     </script>
