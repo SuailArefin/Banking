@@ -17,29 +17,10 @@ document.getElementById('add-amount').addEventListener('click',function(){
     console.log(addedamount);
     document.getElementById('balance').innerText = addedamount;
 
-     /////////////////////withdraw
-
-        document.getElementById('withdraw').addEventListener('click',function(){
-
-
-        //age balance neo ase const ke call korley hbe
-
-
-        //.......................
-        const getamount = document.getElementById('input-amount').value;
-        const withdraw = parseFloat(getamount);
-        const withdrawamount =(addedamount - withdraw) ;
-        console.log(withdrawamount);
-
-        document.getElementById('balance').innerText = withdrawamount;
-
-
-        
-
-
-    })
 
    
 
 })
+//lesson-------->>> ami uporer function e jodi cashout kori tahole age add oney call krley akbar cashout kaj korche karon 
+//cahsout ta add money er vitore tai baire arekta funchtion banabo cash out er jonno 
 
