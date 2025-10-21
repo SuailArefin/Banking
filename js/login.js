@@ -17,7 +17,7 @@ document.getElementById('login').addEventListener('click', function(event){
         window.location.href = '/home.html'
     }
     else{
-        console.log("Login UnSuccess");
+        alrt('Login UnSuccess');
     }
 
     

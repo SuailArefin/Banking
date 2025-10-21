@@ -1,4 +1,5 @@
      /////////////////////withdraw
+    
      console.log('withdraw')
      
 
@@ -21,9 +22,14 @@
         console.log(withdrawamount);
 
         document.getElementById('balance').innerText = withdrawamount;
+       
 
 
         
 
 
     })
+    
+
+    //add money somoy sudhu add money thakbe and cash out er somoy add money hide hoye jabe eyta fuction hide and remove add use
+    //kore kora jay kintu seta korini but module e ache..
