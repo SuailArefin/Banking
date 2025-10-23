@@ -27,11 +27,17 @@
         tabindex="-1"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><a href="index.html">Log In</a></li>
-        <li><a>Transection History</a></li>
+        <li>  <button 
+                id="openPopupBtn"
+                class="">
+                Show Transitions
+              </button></li>
         <li><a>About Us</a></li>
       </ul>
     </div>
   </div>
+
+
   <div class="navbar-center">
     <a class="btn btn-ghost text-xl font-bold">Rise Fund BD</a>
   </div>
@@ -50,6 +56,8 @@
   </div>
   
 </div>
+
+
 <div class="hero bg-base-200 min-h-screen overflow-x-scroll">
     <!-- //card............1 -->
   <div class="hero-content flex-col ">
@@ -107,6 +115,22 @@
         <input id="donate-3" type="number" class="input" placeholder="Ammount" />
         </form>
         </div>
+
+        <!-- for showing transitionssssssssssssssss -->
+  <div 
+    id="popupModal"
+    class="fixed inset-0 flex items-center justify-center bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
+    
+    <!-- Popup Content Box -->
+    <div class="bg-white rounded-xl p-6 shadow-xl max-w-sm text-center transform scale-90 transition-all duration-300">
+      <h2 class="text-xl font-semibold mb-2">Transection History </h2>
+      <p id="transections" class="text-gray-600 mb-4"></p>
+      <button id="closePopupBtn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+        Close
+      </button>
+    </div>
+  </div>
+
     </div>
   </div>
 
@@ -134,6 +158,76 @@
        
        <script src="/js/cash.js"></script>
        <script src="/js/donate.js"></script>
+
+
+         <script>
+    const openBtn = document.getElementById('openPopupBtn');
+    const closeBtn = document.getElementById('closePopupBtn');
+    const popup = document.getElementById('popupModal');
+    const popupBox = popup.querySelector('div');
+
+    const donatedbal =document.getElementById('donate-1');
+    const donatedbalmain =document.getElementById('balance-flood');
+    const displayMainBalances = document.getElementById('balance').innerText;
+
+    openBtn.addEventListener('click', () => {
+      popup.classList.remove('opacity-0', 'pointer-events-none');
+      popupBox.classList.remove('scale-90');
+      popupBox.classList.add('scale-100');
+// .............code abr likte hoice  cashout er cz valur gulo gloab na tai aaccasseble na..............
+    const donateam = getInputFieldValueById('donate-1');//function set kore rakci id dialey value k float kore output dibe
+    const floodbalance = displayedBalance('balance-flood');//function set kore rakci id dialey value k float kore output dibe
+    const displayval = floodbalance + donateam;
+    document.getElementById('balance-flood').innerText = displayval;
+
+
+
+    const Mainbalance = displayedBalance('balance');
+    const displayMainBalance = Mainbalance - donateam;
+    
+    document.getElementById('balance').innerText = displayMainBalance;
+// ...............................................................
+      const startTime = new Date();//to add thime
+      const timeStr = startTime.toLocaleTimeString();
+
+      const p =document.createElement('p');
+      p.innerText = ` Donated : ${donateam} CrurrentBalance ${displayMainBalance} Time : ${timeStr} `;
+      console.log(p);
+      document.getElementById('transections').appendChild(p);
+
+// ......................again for other 2 donate section........................
+    const donateam2 = getInputFieldValueById('donate-2');//function set kore rakci id dialey value k float kore output dibe
+    const floodbalance2 = displayedBalance('balance-sawab');//function set kore rakci id dialey value k float kore output dibe
+    const displayval2 = floodbalance2 + donateam2;
+    document.getElementById('balance-sawab').innerText = displayval2;
+
+
+
+     
+    const displayMainBalance2 = Mainbalance - donateam2;
+    
+    document.getElementById('balance').innerText = displayMainBalance2;
+// ...............................................................
+      const startTime2 = new Date();//to add thime
+      const timeStr2 = startTime2.toLocaleTimeString();
+
+      const p2 =document.createElement('p');
+      p2.innerText = ` Donated : ${donateam2} CrurrentBalance ${displayMainBalance2} Time : ${timeStr2} `;
+      console.log(p2);
+      document.getElementById('transections').appendChild(p2);
+
+// ..........................................................................................
+
+
+
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.classList.add('opacity-0', 'pointer-events-none');
+      popupBox.classList.remove('scale-100');
+      popupBox.classList.add('scale-90');
+    });
+  </script>
 
 
     

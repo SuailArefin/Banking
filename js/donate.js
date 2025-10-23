@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-
+//Dom stucture ta akbare load korte
 
 document.getElementById('Flood-Donation-btn').addEventListener('click',function(){
 
-    const donateam = getInputFieldValueById('donate-1');
-    const floodbalance = displayedBalance('balance-flood');
+    const donateam = getInputFieldValueById('donate-1');//function set kore rakci id dialey value k float kore output dibe
+    const floodbalance = displayedBalance('balance-flood');//function set kore rakci id dialey value k float kore output dibe
     console.log(floodbalance);
     console.log(donateam);
     const displayval = floodbalance + donateam;
@@ -18,6 +18,7 @@ document.getElementById('Flood-Donation-btn').addEventListener('click',function(
     const Mainbalance = displayedBalance('balance');
     const displayMainBalance = Mainbalance - donateam;
     document.getElementById('balance').innerText = displayMainBalance;
+    
 
 
 
@@ -75,3 +76,8 @@ document.getElementById('Flood-Donation-btn-3').addEventListener('click',functio
 
 
 });
+
+      const p =document.createElement('p');
+      p.innerText = ` Donated : ${displayval} Crurrent Balance ${displayMainBalance}`;
+      console.log(p);
+      document.getElementById('transections').appendChild(p);
